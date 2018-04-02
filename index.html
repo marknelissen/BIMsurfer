@@ -2,13 +2,9 @@
 <html>
 <title>BIMsurfer V2 - Demo index</title>
 <head>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/bimserverapiwebsocket.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/bimserverclient.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/bimserverapipromise.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/ifc2x3tc1.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/ifc4.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/model.js"></script>
-	<script type="text/javascript" src="https://thisisanexperimentalserver.com/apps/bimserverjavascriptapi/js/translations_en.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://localhost:8082/apps/bimserverjavascriptapi/bimserverapi.umd.js?_v=0.0.140"></script>
+    <script src="http://localhost:8082/apps/bimsurfer/bimsurfer.min.js?_v=0.0.43"></script>
 </head>
 <body>
 <h1>BIMservers</h1>
@@ -30,6 +26,7 @@
 <a href="docs/example_testModel.html">Test Model</a>
 <script>
 document.addEventListener("DOMContentLoaded", function(event) {
+    window.BimServerClient = bimserverapi.default;
 	function loadFromBimserver(address, username, password, target) {
 		target.innerHTML = "";
 		var client = new BimServerClient(address);
